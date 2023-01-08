@@ -1,0 +1,17 @@
+spring:
+  jpa:
+    database: POSTGRESQL
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+  datasource:
+    url: jdbc:postgresql://localhost:5432/ddb2
+    username: postgres
+    password: 112233qq
+    driverClassName: org.postgresql.Driver
+  sql:
+    init:
+      platform: postgres
+  flyway:
+    baseline-on-migrate: true
+
