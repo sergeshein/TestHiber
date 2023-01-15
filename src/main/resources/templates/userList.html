@@ -6,20 +6,19 @@
 </head>
 <body>
 <div th:insert="~{fragments/menu :: #nav-menu}"></div>
-<p th:if="${loginError}" class="error">Wrong name or pass</p>
-<form th:action="@{/auth}" method="post">
+
     <table border="2">
         <tr>
             <td>Name</td>
-            <td><input type="text" name="username"></td>
-        </tr>
-        <tr>
             <td>Password</td>
-            <td><input type="password" name="password"></td>
+
+        </tr>
+        <tr th:each="user : ${users}">
+            <td th:text="${user.username}">TestUsername</td>
+            <td th:text="${user.email}">TestUserEmail</td>
         </tr>
     </table>
+<a href="@{users/new}">Add new</a>
     <button type="submit">Log in</button>
-</form>
-
 </body>
 </html>
