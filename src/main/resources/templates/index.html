@@ -5,7 +5,12 @@
     <title>Demo SHOP</title>
 </head>
 <body>
-<div th:insert="~{fragments/menu :: #nav-menu}"></div>
+<!--<div th:insert="~{fragments/menu :: #nav-menu}"></div>-->
+
+
+
+<a th:href="@{/users/new}">Users</a>
+<a th:href="@{/login}">Login</a>
 
 </body>
 </html>
