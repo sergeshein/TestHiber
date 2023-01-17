@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 @Service
 public class UserServiceImpl implements UserService{
@@ -28,7 +29,7 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public boolean save(UserDto userDto) {
-        if (!Objects.equals(userDto.getPassword(), userDto.getMatchPassword())){
+        if (!Objects.equals(userDto.getPassword(), userDto.getMatchingPassword())) {
             throw new RuntimeException("Password not Equals");
         }
         User user = User.builder()
@@ -40,6 +41,21 @@ public class UserServiceImpl implements UserService{
         userRepo.save(user);
         return true;
     }
+
+//    @Override
+//    public List<UserDto> getAll() {
+//        return userRepo.findAll()
+//                .stream()
+//                .map(this::toDto)
+//                .collect(Collectors.toList());
+//    }
+
+//    private UserDto toDto(User user) {
+//        return UserDto.builder()
+//                .username(user.getName())
+//                .email(user.getEmail())
+//                .build();
+//    }
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
