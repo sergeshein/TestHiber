@@ -25,18 +25,18 @@ public class SecurityConfig {
                 .requestMatchers("/users/new").hasAuthority(Role.ADMIN.name())
                 .anyRequest().permitAll()
                 .and()
-                .formLogin()
-                .loginPage("/login")
-//                .failureUrl("/login-error")
-                .loginProcessingUrl("/auth")
-//                .defaultSuccessUrl("/index")
-                .permitAll()
+                    .formLogin()
+                    .loginPage("/login")
+                    .failureUrl("/login-error")
+                    .loginProcessingUrl("/auth")
+                    .defaultSuccessUrl("/users/new")
+                    .permitAll()
                 .and()
-                .logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-                .logoutSuccessUrl("/").deleteCookies("JSESSIONID")
-                .invalidateHttpSession(true)
+                    .logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+                    .logoutSuccessUrl("/").deleteCookies("JSESSIONID")
+                    .invalidateHttpSession(true)
                 .and()
-                .csrf().disable();
+                    .csrf().disable();
         return http.build();
     }
 }

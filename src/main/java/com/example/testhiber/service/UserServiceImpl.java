@@ -42,20 +42,20 @@ public class UserServiceImpl implements UserService{
         return true;
     }
 
-//    @Override
-//    public List<UserDto> getAll() {
-//        return userRepo.findAll()
-//                .stream()
-//                .map(this::toDto)
-//                .collect(Collectors.toList());
-//    }
+    @Override
+    public List<UserDto> getAll() {
+        return userRepo.findAll()
+                .stream()
+                .map(this::toDto)
+                .collect(Collectors.toList());
+    }
 
-//    private UserDto toDto(User user) {
-//        return UserDto.builder()
-//                .username(user.getName())
-//                .email(user.getEmail())
-//                .build();
-//    }
+    private UserDto toDto(User user) {
+        return UserDto.builder()
+                .username(user.getName())
+                .email(user.getEmail())
+                .build();
+    }
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
