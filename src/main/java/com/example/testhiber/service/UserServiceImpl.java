@@ -44,6 +44,11 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
+    public void save(User user) {
+        userRepo.save(user);
+    }
+
+    @Override
     public List<UserDto> getAll() {
         return userRepo.findAll()
                 .stream()

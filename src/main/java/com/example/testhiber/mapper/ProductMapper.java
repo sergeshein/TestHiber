@@ -10,6 +10,7 @@ import java.util.List;
 
 @Mapper
 public interface ProductMapper {
+
     ProductMapper MAPPER = Mappers.getMapper(ProductMapper.class);
 
     Product toProduct(ProductDto dto);
@@ -19,5 +20,7 @@ public interface ProductMapper {
 
     List<Product> toProductList(List<ProductDto> productDtoList);
     List<ProductDto> fromProductDtoList(List<Product> products);
+
+
 
 }

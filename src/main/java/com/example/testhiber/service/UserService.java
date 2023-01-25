@@ -11,6 +11,7 @@ import java.util.List;
 @Service
 public interface UserService extends UserDetailsService { //security
     boolean save(UserDto userDto);
+    void save(User user);
     List<UserDto> getAll();
 
     void updateProfile(UserDto dto);
