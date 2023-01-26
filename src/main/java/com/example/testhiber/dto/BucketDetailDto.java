@@ -23,7 +23,7 @@ public class BucketDetailDto {
         this.title = product.getTittle();
         this.productId = product.getId();
         this.price = product.getPrice();
-        this.amount = new BigDecimal(1);
+        this.amount = new BigDecimal(1.0);
         this.sum = Double.valueOf(product.getPrice().toString());
     }
 }

@@ -64,6 +64,7 @@ public class BucketServiceImpl implements BucketService{
 
         BucketDto bucketDto = new BucketDto();
         Map<Long, BucketDetailDto>mapByProductId = new HashMap<>();
+
         List<Product> products = user.getBucket().getProducts();
         for(Product product : products){
             BucketDetailDto detailDto = mapByProductId.get(product.getId());
