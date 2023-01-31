@@ -26,7 +26,7 @@ public class User {
     @Enumerated(EnumType.STRING)
     private Role role;
     @OneToOne(
-//            mappedBy = "user",
+            mappedBy = "user",
 //            orphanRemoval = true,
 //            fetch = FetchType.LAZY,
             cascade = CascadeType.REMOVE
